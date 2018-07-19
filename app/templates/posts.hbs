@@ -1,0 +1,8 @@
+<h2>Behold the Posts</h2>
+<ul>
+  {{#each model as |post|}}
+    <li {{action "showPost" post}}>{{post}}</li>
+  {{/each}}
+</ul>
+
+{{outlet}}
