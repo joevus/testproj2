@@ -1,7 +1,7 @@
 <h2>Behold the Posts</h2>
 <ul>
   {{#each model as |post|}}
-    <li {{action "showPost" post}}>{{post}}</li>
+    <li {{action "showPost" post}}>{{post.title}}, id {{post.id}}</li>
   {{/each}}
 </ul>
 

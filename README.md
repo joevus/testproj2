@@ -1,7 +1,8 @@
 # cottonwood
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+For reference, I am following the Getting Started tutorial for Emberjs 3.0.0
+As well as this tutorial to integrate communication with an outside API rather than a fake internal one: https://medium.com/ember-ish/the-simplest-possible-ember-data-crud-16eacee33ae6
+
 
 ## Prerequisites
 
