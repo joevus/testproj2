@@ -3,6 +3,9 @@
 For reference, I am following the Getting Started tutorial for Emberjs 3.0.0
 As well as this tutorial to integrate communication with an outside API rather than a fake internal one: https://medium.com/ember-ish/the-simplest-possible-ember-data-crud-16eacee33ae6
 
+This pointed me to using .query instead of .findAll
+https://discuss.emberjs.com/t/how-to-get-model-params-on-an-adapter/11969
+
 
 ## Prerequisites
 

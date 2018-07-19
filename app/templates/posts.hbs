@@ -5,4 +5,25 @@
   {{/each}}
 </ul>
 
+<div>
+  <button {{action 'readPost'}}> Read Post 1 </button>
+</div>
+
+<div>
+  {{input value=newPost placeholder="post name"}}
+  <button {{action 'createPost'}}>Create</button>
+</div>
+
+<div>
+  {{input value=updatedTitle placeholder="new name for post 1"}}
+  <button {{action 'updatePost'}}>Update</button>
+</div>
+
+<div>
+  {{input value=destroyId placeholder="id of post to delete"}}
+  <button {{action 'destroyPost'}}>Delete</button>
+</div>
+
+
+
 {{outlet}}
