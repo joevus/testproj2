@@ -3,11 +3,14 @@ import Controller from '@ember/controller';
 export default Controller.extend({
   actions: {
     createPost() {
-      let newPost = this.get('newPost');
+      let newTitle = this.get('newTitle');
+      let newContent = this.get('newContent');
       let newRecord = this.store.createRecord('post', {
-        title: newPost
+        title: newTitle,
+        content: newContent,
+        key: "joe.hoskisson"
       });
-      newPost.save();
+      newRecord.save();
     },
     readPost() {
       this.store.findRecord('post', 1).then((post) => {
