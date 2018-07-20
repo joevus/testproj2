@@ -19,8 +19,10 @@ export default Controller.extend({
     },
     updatePost() {
       let updatedTitle = this.get('updatedTitle');
-      let post = this.get('model').findBy('id', '1');
+      let updatedContent = this.get('updatedContent');
+      let post = this.get('model').findBy('id', '3fdbfa60-8b91-11e8-8433-317a693cba8a');
       post.set('title', updatedTitle);
+      post.set('conent', updatedContent);
       post.save();
     },
     destroyPost() {
