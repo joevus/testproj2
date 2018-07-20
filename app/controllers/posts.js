@@ -29,6 +29,9 @@ export default Controller.extend({
       let destroyId = this.get('destroyId');
       let post = this.get('model').findBy('id', destroyId);
       post.destroyRecord;
+    },
+    showPost(post) {
+      alert(post.id);
     }
   }
 });
