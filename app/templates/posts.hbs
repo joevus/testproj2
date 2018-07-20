@@ -1,7 +1,10 @@
 <h2>Behold the Posts</h2>
 <ul>
   {{#each model as |post|}}
-    <li {{action "showPost" post}}>{{post.title}}, id {{post.id}}</li>
+    <li>{{post.title}}, id {{post.id}}</li>
+    {{input value=updatedTitle placeholder="new title for post 1"}}
+    {{input value=updatedContent placeholder= "new content for post"}}
+    <button {{action 'updatePost' post}}>Update</button>
   {{/each}}
 </ul>
 
@@ -13,12 +16,6 @@
   {{input value=newTitle placeholder="post title"}}
   {{input value=newContent placeholder="post content"}}
   <button {{action 'createPost'}}>Create</button>
-</div>
-
-<div>
-  {{input value=updatedTitle placeholder="new title for post 1"}}
-  {{input value=updatedContent placeholder= "new content for post"}}
-  <button {{action 'updatePost'}}>Update</button>
 </div>
 
 <div>

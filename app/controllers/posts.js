@@ -17,21 +17,18 @@ export default Controller.extend({
         alert(post.get('title') + ' ' + game.get('id'))
       });
     },
-    updatePost() {
+    updatePost(post) {
       let updatedTitle = this.get('updatedTitle');
       let updatedContent = this.get('updatedContent');
-      let post = this.get('model').findBy('id', '3fdbfa60-8b91-11e8-8433-317a693cba8a');
+      //let post = this.get('model').findBy('id', post.id);
       post.set('title', updatedTitle);
-      post.set('conent', updatedContent);
+      post.set('content', updatedContent);
       post.save();
     },
     destroyPost() {
       let destroyId = this.get('destroyId');
       let post = this.get('model').findBy('id', destroyId);
       post.destroyRecord;
-    },
-    showPost(post) {
-      alert(post.id);
     }
   }
 });
