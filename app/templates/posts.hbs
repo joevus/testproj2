@@ -1,16 +1,4 @@
 <h2>Behold the Posts</h2>
-<ul>
-  {{#each model as |post|}}
-    <li>{{post.title}}, id {{post.id}}</li>
-    {{input value=post.updatedTitle placeholder="new title for post 1"}}
-    {{input value=post.updatedContent placeholder= "new content for post"}}
-    <button {{action 'updatePost' post}}>Update</button>
-  {{/each}}
-</ul>
-
-<div>
-  <button {{action 'readPost'}}> Read Post 1 </button>
-</div>
 
 <div>
   {{input value=newTitle placeholder="post title"}}
@@ -18,11 +6,18 @@
   <button {{action 'createPost'}}>Create</button>
 </div>
 
-<div>
-  {{input value=destroyId placeholder="id of post to delete"}}
-  <button {{action 'destroyPost'}}>Delete</button>
-</div>
-
+<ul>
+  {{#each model as |postEntry|}}
+    {{post-tile
+      post=postEntry
+      onUpdate=(action "updatePost")
+    }}
+    <!-- <li>{{post.title}}, id {{post.id}}</li>
+    {{input value=post.updatedTitle placeholder="new title for post 1"}}
+    {{input value=post.updatedContent placeholder= "new content for post"}}
+    <button {{action 'updatePost' post}}>Update</button> -->
+  {{/each}}
+</ul>
 
 
 {{outlet}}

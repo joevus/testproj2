@@ -1,0 +1,16 @@
+<div>{{post.title}}, id {{post.id}}</div>
+
+<div>
+  {{input value=updatedTitle placeholder="new title for post 1"}}
+  {{input value=updatedContent placeholder= "new content for post"}}
+  <button {{action 'handleUpdate' post.id}}>Update</button>
+</div>
+
+<div>
+  {{input value=destroyId placeholder="id of post to delete"}}
+  <button {{action 'destroyPost'}}>Delete</button>
+</div>
+
+<div>
+  <button {{action 'readPost'}}> Read Post 1 </button>
+</div>
