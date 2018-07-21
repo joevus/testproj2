@@ -17,10 +17,13 @@ export default Controller.extend({
         alert(post.get('title') + ' ' + game.get('id'))
       });
     },
-    updatePost(post) {
-      let updatedTitle = this.get('updatedTitle');
-      let updatedContent = this.get('updatedContent');
-      //let post = this.get('model').findBy('id', post.id);
+    updatePost(selectedPost) {
+      // let updatedTitle = this.get('post.updatedTitle');
+      // let updatedContent = this.get('post.updatedContent');
+      let updatedTitle = selectedPost.updatedTitle;
+      let updatedContent = selectedPost.updatedContent;
+      let post = this.get('model').findBy('id', selectedPost.id);
+      console.log(post);
       post.set('title', updatedTitle);
       post.set('content', updatedContent);
       post.save();
