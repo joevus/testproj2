@@ -7,10 +7,8 @@ export default Component.extend({
       let updatedContent = this.get('updatedContent');
       this.get('onUpdate')(postId, updatedTitle, updatedContent);
     },
-    destroyPost() {
-      let destroyId = this.get('destroyId');
-      let post = this.get('model').findBy('id', destroyId);
-      post.destroyRecord;
+    handleDelete(postId) {
+      this.get('onDelete')(postId);
     }
   }
 

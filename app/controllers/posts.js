@@ -32,10 +32,9 @@ export default Controller.extend({
         console.log(error);
       });
     },
-    destroyPost() {
-      let destroyId = this.get('destroyId');
-      let post = this.get('model').findBy('id', destroyId);
-      post.destroyRecord;
+    deletePost(postId) {
+      let post = this.get('model').findBy('id', postId);
+      post.destroyRecord();
     }
   }
 });
