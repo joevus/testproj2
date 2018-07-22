@@ -19,24 +19,13 @@ export default Controller.extend({
       });
     },
     updatePost(postId, updatedTitle, updatedContent) {
-      // let updatedTitle = this.get('post.updatedTitle');
-      // let updatedContent = this.get('post.updatedContent');
-      // let updatedTitle = selectedPost.updatedTitle;
-      // let updatedContent = selectedPost.updatedContent;
       if(updatedContent === undefined) {
         updatedContent = '';
       }
       let post = this.get('model').findBy('id', postId);
-      // this.store.findRecord('post', postId).then((post) => {
-      //   post.set('title', updatedTitle);
-      //   post.set('content', updatedContent);
-      //   post.save();
-      //   // this.save();
-      // });
       console.log(post);
       post.set('title', updatedTitle);
       post.set('content', updatedContent);
-      // post.set('')
       post.save().then(function(model) {
         // save worked
       }, function(error) {
