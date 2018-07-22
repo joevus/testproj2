@@ -4,7 +4,8 @@ export default Controller.extend({
   actions: {
     createPost() {
       let newTitle = this.get('newTitle');
-      let newContent = this.get('newContent');
+      let newContent = this.get('newContent') || 'default content';
+      alert(newContent);
       let newRecord = this.store.createRecord('post', {
         title: newTitle,
         content: newContent,
@@ -22,10 +23,20 @@ export default Controller.extend({
       // let updatedContent = this.get('post.updatedContent');
       // let updatedTitle = selectedPost.updatedTitle;
       // let updatedContent = selectedPost.updatedContent;
-      // let post = this.get('model').findBy('id', postId);
+      if(updatedContent === undefined) {
+        updatedContent = '';
+      }
       let post = this.get('model').findBy('id', postId);
+      // this.store.findRecord('post', postId).then((post) => {
+      //   post.set('title', updatedTitle);
+      //   post.set('content', updatedContent);
+      //   post.save();
+      //   // this.save();
+      // });
+      console.log(post);
       post.set('title', updatedTitle);
       post.set('content', updatedContent);
+      // post.set('')
       post.save().then(function(model) {
         // save worked
       }, function(error) {
