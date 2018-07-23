@@ -4,10 +4,11 @@
     <div class="post-text">
       <h2>{{post.title}}</h2>
       <p>{{post.content}}</p>
+      <div class="attachment">Attachment: {{post.attachment}}</div>
 
     </div>
   {{/link-to}}
-  
+
   <div class="post-edit">
     <div>
       {{input value=updatedTitle placeholder="Edit post title"}}
