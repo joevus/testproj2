@@ -1,0 +1,23 @@
+/* #bd6228 logo orange */
+/* #4f748a darker blue */
+/* #8abac3 lighter blue */
+/* headers ltc-bodoni-175 */
+/* body azo-sans-web */
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #282828;
+  font-family: Helvetica, sans-serif;
+}
+
+header h1{
+  color: #4f748a;
+  text-align: center;
+  font-size: 36pt;
+  padding: 40px;
+}

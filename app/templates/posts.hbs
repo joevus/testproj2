@@ -1,20 +1,22 @@
-<h2>Behold the Posts</h2>
+<div class="container">
+  <div class="author-post">
+    <h2>Author a post</h2>
+    {{input value=newTitle placeholder="post title"}}
+    {{input value=newContent placeholder="post content"}}
+    <button {{action 'createPost'}}>Create</button>
+  </div>
 
-<div>
-  {{input value=newTitle placeholder="post title"}}
-  {{input value=newContent placeholder="post content"}}
-  <button {{action 'createPost'}}>Create</button>
+  <ul class="post-list">
+    {{#each model as |postEntry|}}
+      {{post-tile
+        post=postEntry
+        onUpdate=(action "updatePost")
+        onDelete=(action "deletePost")
+      }}
+    {{/each}}
+  </ul>
 </div>
 
-<ul>
-  {{#each model as |postEntry|}}
-    {{post-tile
-      post=postEntry
-      onUpdate=(action "updatePost")
-      onDelete=(action "deletePost")
-    }}
-  {{/each}}
-</ul>
 
 
 {{outlet}}
