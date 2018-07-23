@@ -5,7 +5,6 @@ export default Controller.extend({
     createPost() {
       let newTitle = this.get('newTitle');
       let newContent = this.get('newContent') || 'default content';
-      alert(newContent);
       let newRecord = this.store.createRecord('post', {
         title: newTitle,
         content: newContent,
