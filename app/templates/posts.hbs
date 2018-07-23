@@ -3,6 +3,7 @@
     <h2>Author a post</h2>
     {{input value=newTitle placeholder="post title"}}
     {{textarea value=newContent placeholder="post content"}}
+    {{input id="new-file" type="file"}}
     <button {{action 'createPost'}}>Create</button>
   </div>
 
