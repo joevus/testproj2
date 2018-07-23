@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('scientists');
   this.route('programmers');
   this.route('posts');
+  this.route('post', {path: '/posts/:post_id'});
 });
 
 export default Router;
