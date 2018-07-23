@@ -1,17 +1,18 @@
 <div class="post-tile">
-  <h2>{{post.title}}</h2>
-  <p>{{post.content}}</p>
-  <div>
-    {{input value=updatedTitle placeholder="new title for post 1"}}
-    {{textarea value=updatedContent placeholder= "new content for post"}}
-    <button {{action 'handleUpdate' post.id}}>Update</button>
+  <div class="post-text">
+    <h2>{{post.title}}</h2>
+    <p>{{post.content}}</p>
+
   </div>
 
-  <div>
-    <button {{action 'handleDelete' post.id}}>Delete</button>
+  <div class="post-edit">
+    <div>
+      {{input value=updatedTitle placeholder="Edit post title"}}
+      {{textarea value=updatedContent placeholder= "Edit post content"}}
+      <button {{action 'handleUpdate' post.id}}>Update</button>
+      <button {{action 'handleDelete' post.id}}>Delete</button>
+      <button {{action 'readPost'}}> Read Post 1 </button>
+    </div>
   </div>
 
-  <div>
-    <button {{action 'readPost'}}> Read Post 1 </button>
-  </div>
 </div>

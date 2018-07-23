@@ -6,6 +6,11 @@
 
 /* General */
 
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html {
   padding: 0;
   margin: 0;
@@ -24,6 +29,7 @@ input {
   margin-bottom: 10px;
   border-radius: 3px;
   padding-left: 8px;
+  font-size: 14px;
 }
 
 textarea {
@@ -33,12 +39,13 @@ textarea {
   border-radius: 3px;
   padding-left: 8px;
   border-color: #777;
+  font-size: 14px;
 }
 
 button {
-  font-size: 14pt;
+  font-size: 12pt;
   padding: 5px 12px;
-  border-radius: 2px;
+  /* border-radius: 2px; */
   margin-bottom: 10px;
 }
 
@@ -78,6 +85,25 @@ header h1{
 ul.post-list {
   padding: 20px 15px;
   max-width: 600px;
+}
+
+.post-tile {
+  /* padding: 10px 15px; */
+  margin-bottom: 40px;
+  /* background-color: #8abac3; */
+  /* border: solid 2px #8abac3; */
+}
+
+.post-tile p {
+  min-height: 150px;
+  border-radius: 3px;
+}
+
+.post-tile .post-text {
+  background-color: #addce5;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
 }
 
 /* Other */
