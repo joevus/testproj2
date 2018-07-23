@@ -94,6 +94,11 @@ ul.post-list {
   /* border: solid 2px #8abac3; */
 }
 
+.post-tile a, .post-tile a:link, .post-tile a:visited, .post-tile a:hover, .post-tile a:active {
+  text-decoration: none;
+  color: #282828;
+}
+
 .post-tile p {
   min-height: 150px;
   border-radius: 3px;
