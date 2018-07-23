@@ -100,10 +100,10 @@ ul.post-list {
 }
 
 .post-tile .post-text {
-  background-color: #addce5;
+  background-color: #dddde5;
   padding: 10px 10px;
   margin-bottom: 10px;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 /* Other */
