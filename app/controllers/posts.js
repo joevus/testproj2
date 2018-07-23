@@ -11,6 +11,9 @@ export default Controller.extend({
   isSortByCreatedAt: true,
 
   actions: {
+    toggleSort() {
+      
+    },
     createPost() {
       let newTitle = this.get('newTitle');
       let newContent = this.get('newContent') || 'default content';

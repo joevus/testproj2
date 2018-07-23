@@ -8,6 +8,16 @@
   </div>
 
   <ul class="post-list">
+    <div>
+      <h3>Sort By:</h3>
+      <div class="">
+        <span>{{input type="radio"}} Published Date</span>
+      </div>
+      <div class="">
+        {{input type="radio"}} Title
+      </div>
+
+    </div>
     {{#each (if isSortByCreatedAt sortedByCreatedAt sortedByTitle) as |postEntry|}}
       {{post-tile
         post=postEntry
