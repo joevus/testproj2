@@ -1,5 +1,8 @@
 <div class="container">
   <ul class="post-list">
+    {{#link-to "posts"}}
+      <button> Back </button>
+    {{/link-to}}
     {{post-tile
       post=model
       onUpdate=(action "updatePost")

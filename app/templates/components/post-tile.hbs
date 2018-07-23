@@ -11,7 +11,9 @@
       {{textarea value=updatedContent placeholder= "Edit post content"}}
       <button {{action 'handleUpdate' post.id}}>Update</button>
       <button {{action 'handleDelete' post.id}}>Delete</button>
-      <button {{action 'readPost'}}> Read Post 1 </button>
+      {{#link-to "post" post.id}}
+        <button> View Post </button>
+      {{/link-to}}
     </div>
   </div>
 
