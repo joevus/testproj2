@@ -1,10 +1,16 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
+  // for sorting posts.
+  byTitle: ['title'],
+  sortedByTitle: Ember.computed.sort('model', 'byTitle'),
+
+  byCreatedAt: ['created_at'],
+  sortedByCreatedAt: Ember.computed.sort('model', 'byCreatedAt'),
+
+  isSortByCreatedAt: true,
+
   actions: {
-    // first attempt at sorting.
-    // sorting: ['created_at:desc'],
-    // sortedContent: Em.computed.sort('model', 'sorting'),
     createPost() {
       let newTitle = this.get('newTitle');
       let newContent = this.get('newContent') || 'default content';
