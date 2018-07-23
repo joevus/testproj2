@@ -2,6 +2,9 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
   actions: {
+    // first attempt at sorting.
+    // sorting: ['created_at:desc'],
+    // sortedContent: Em.computed.sort('model', 'sorting'),
     createPost() {
       let newTitle = this.get('newTitle');
       let newContent = this.get('newContent') || 'default content';
