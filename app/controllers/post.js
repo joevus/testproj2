@@ -18,16 +18,7 @@ export default Controller.extend({
 
       if (file) {
         reader.readAsDataURL(file);
-      } else {
-         let newRecord = this.store.createRecord('post', {
-            title: newTitle,
-            content: newContent,
-            attachment: fileData,
-            key: "joe.hoskisson"
-          });
-          newRecord.save();
       }
-
     },
     updatePost(postId, updatedTitle, updatedContent) {
       if(updatedContent === undefined) {
