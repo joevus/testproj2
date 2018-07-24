@@ -29,6 +29,10 @@ export default Controller.extend({
       console.log(post);
       post.set('title', updatedTitle);
       post.set('content', updatedContent);
+      // include attachment if user uploaded one
+      if(this.fileData !== null) {
+        post.set('attachment', this.fileData);
+      }
       post.save().then(function(model) {
         // save worked
       }, function(error) {
