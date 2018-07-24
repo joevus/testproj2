@@ -82,9 +82,7 @@ export default Controller.extend({
         attachment: attachment,
         key: "joe.hoskisson"
       });
-      newRecord.save().then(function() {
-        self.readPosts();
-      });
+      newRecord.save();
 
     },
     readPosts() {

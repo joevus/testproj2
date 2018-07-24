@@ -4,6 +4,9 @@ export default DS.RESTAdapter.extend({
   host: 'http://167.99.111.228:4000',
   urlForUpdateRecord(id, modelName, snapshot) {
     return `${this.host}/posts/${id}?key=joe.hoskisson`;
+  },
+  urlForFindAll(modelName, snapshot) {
+    return `${this.host}/posts?key=joe.hoskisson`;
   }
 
   // see https://www.emberjs.com/api/ember-data/3.3/classes/DS.Adapter/methods/updateRecord?anchor=updateRecord
