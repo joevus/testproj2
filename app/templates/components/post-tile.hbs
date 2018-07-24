@@ -15,7 +15,8 @@
     <div>
       {{input value=updatedTitle placeholder="Edit post title"}}
       {{textarea value=updatedContent placeholder= "Edit post content"}}
-      {{input type="file" }}
+      <input type="file" onchange={{action "handleFileLoad"}}>
+      <!-- {{input type="file" onchange='handleFileLoad' }} -->
       <button {{action 'handleUpdate' post.id}}>Update</button>
       <button {{action 'handleDelete' post.id}}>Delete</button>
       {{#link-to "post" post.id}}
