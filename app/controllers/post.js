@@ -1,8 +1,9 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
+  fileData: null,
+  
   actions: {
-    fileData: null,
     fileLoad(file) {
       console.log("triggered fileLoad:" );
       console.log(file);

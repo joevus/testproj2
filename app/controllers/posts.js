@@ -10,6 +10,8 @@ export default Controller.extend({
 
   isSortByCreatedAt: true,
 
+  fileData: null,
+
   actions: {
     toggleSort(sortOption) {
       if(sortOption === "date") {
@@ -18,55 +20,44 @@ export default Controller.extend({
         this.set('isSortByCreatedAt',false);
       }
     },
+
+    fileLoad(event) {
+      let file = event.target.files[0];
+      console.log("triggered fileLoad:" );
+      console.log(file);
+      const reader = new FileReader();
+      let fileData;
+      // maybe see if can put filePath in database later
+      // let filePath;
+
+      reader.onload = () => {
+        fileData = reader.result;
+        this.fileData = fileData;
+        console.log(this.fileData);
+      }
+
+      if (file) {
+        // check file size, only continue reading if less than 50kb.
+        if(file.size > 50000) {
+          alert("Dag yo, you can't upload a file greater than 50kb. The current file will not be uploaded to the server.");
+        } else {
+          reader.readAsDataURL(file);
+        }
+      }
+    },
     createPost() {
       let newTitle = this.get('newTitle');
       let newContent = this.get('newContent') || 'default content';
-      let newFile = document.querySelector("#new-file").files[0];
-      const reader = new FileReader();
-      let fileData;
-      reader.onload = () => {
-        fileData = reader.result;
-        let newRecord = this.store.createRecord('post', {
-          title: newTitle,
-          content: newContent,
-          attachment: fileData,
-          key: "joe.hoskisson"
-        });
-        newRecord.save();
-      }
+      let attachment = this.get('fileData');
 
-      if (newFile) {
-        reader.readAsDataURL(newFile);
-      } else {
-         let newRecord = this.store.createRecord('post', {
-            title: newTitle,
-            content: newContent,
-            attachment: fileData,
-            key: "joe.hoskisson"
-          });
-          newRecord.save();
-      }
+      let newRecord = this.store.createRecord('post', {
+        title: newTitle,
+        content: newContent,
+        attachment: attachment,
+        key: "joe.hoskisson"
+      });
+      newRecord.save();
 
-      console.log(fileData);
-      // reader.onload = () => {
-      //   fileData = reader.result;
-      //   newRecord = this.store.createRecord('post', {
-      //     title: newTitle,
-      //     content: newContent,
-      //     attachment: fileData,
-      //     key: "joe.hoskisson"
-      //   });
-      //   newRecord.save();
-      //   console.log(fileData);
-      //   console.log(newRecord);
-      // }
-      // let newRecord = this.store.createRecord('post', {
-      //   title: newTitle,
-      //   content: newContent,
-      //   attachment: fileData,
-      //   key: "joe.hoskisson"
-      // });
-      // newRecord.save();
     },
     readPost() {
       this.store.findRecord('post', 1).then((post) => {
