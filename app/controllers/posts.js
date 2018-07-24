@@ -11,8 +11,12 @@ export default Controller.extend({
   isSortByCreatedAt: true,
 
   actions: {
-    toggleSort() {
-      
+    toggleSort(sortOption) {
+      if(sortOption === "date") {
+        this.set('isSortByCreatedAt', true);
+      } else {
+        this.set('isSortByCreatedAt',false);
+      }
     },
     createPost() {
       let newTitle = this.get('newTitle');

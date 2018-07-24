@@ -11,13 +11,16 @@
     <div>
       <h3>Sort By:</h3>
       <div class="">
-        <span>{{input type="radio"}} Published Date</span>
+        <input onchange={{action 'toggleSort' 'date'}} type="radio" value="date" id=sort-option-date name="sort-option" checked>
+        <label for="sort-option-date">Published Date</label>
       </div>
       <div class="">
-        {{input type="radio"}} Title
+        <input onchange={{action 'toggleSort' 'title'}} type="radio" value="title" id=sort-option-title name="sort-option">
+        <label for="sort-option-title">Title</label>
       </div>
 
     </div>
+    <!-- Logic for sort. isSortByCreatedAt found in controller, toggled by toggleSort action -->
     {{#each (if isSortByCreatedAt sortedByCreatedAt sortedByTitle) as |postEntry|}}
       {{post-tile
         post=postEntry
