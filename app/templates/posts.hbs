@@ -3,7 +3,7 @@
     <h2>Author a post</h2>
     {{input value=newTitle placeholder="post title"}}
     {{textarea value=newContent placeholder="post content"}}
-    <input type="file" onchange={{action "fileLoad"}}>
+    <input type="file" onchange={{action "newPostFileLoad"}}>
     <button {{action 'createPost'}}>Create</button>
   </div>
 
@@ -26,7 +26,9 @@
         post=postEntry
         onUpdate=(action "updatePost")
         onDelete=(action "deletePost")
+        onFileLoad=(action "updateFileLoad")
       }}
+
     {{/each}}
   </ul>
 </div>

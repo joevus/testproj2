@@ -120,6 +120,10 @@ input[type=radio] {
   border-radius: 5px;
 }
 
+.attachment {
+  overflow: hidden;
+}
+
 .post-tile .edit-tagline {
   font-style: italic;
 }
