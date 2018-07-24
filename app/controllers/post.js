@@ -17,7 +17,12 @@ export default Controller.extend({
       }
 
       if (file) {
-        reader.readAsDataURL(file);
+        // check file size, only continue reading if less than 50kb.
+        if(file.size > 50000) {
+          alert("Dag yo, you can't upload a file greater than 50kb. The current file will not be uploaded to the server.");
+        } else {
+          reader.readAsDataURL(file);
+        }
       }
     },
     updatePost(postId, updatedTitle, updatedContent) {
